@@ -14,3 +14,16 @@ new Vue({
 })
 ③测试使用：
 <el-button>test</el-button>
+
+2、Vue使用自己编写的组件（Header、Footer）
+①main.js:/*不能用head*/
+import Myheader from './components/header/header'
+
+Vue.component('my-header', {
+  components: { Myheader },
+  template: '<Myheader/>'
+})
+
+②index.vue下使用该组件：
+<!--头部组件加载-->
+<my-header></my-header>
