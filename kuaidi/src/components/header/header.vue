@@ -1,5 +1,6 @@
 <template>
-  <div class="Myheader">
+  <div class="header">
+    <!-- 头部上面部分start -->
     <div class="set">
       <el-row>
         <el-col :span="4"><div class="">
@@ -19,7 +20,9 @@
         </div></el-col>
       </el-row>
     </div>
+    <!-- 头部上面部分end -->
 
+    <!-- 头部下面部分start -->
     <div class="nav">
       <el-row>
         <el-col :span="4"><div class="">
@@ -29,7 +32,7 @@
           <img class="fl" src="../../assets/logo.png" alt="logo">
         </div></el-col>
         <el-col :span="8"><div class="text">
-          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+          <el-menu class="el-menu-demo" mode="horizontal">
             <el-menu-item index="1">门户</el-menu-item>
             <el-submenu index="2">
               <template slot="title">论坛</template>
@@ -46,22 +49,21 @@
           <el-input
             size="mini"
             placeholder="请输入内容"
-            prefix-icon="el-icon-search"
-            v-model="input21">
+            prefix-icon="el-icon-search">
           </el-input>
         </div></el-col>
-      </el-row>
         <el-col :span="4"><div class="">
           &nbsp;
         </div></el-col>
       </el-row>
     </div>
+    <!-- 头部下面部分end -->
   </div>
 </template>
 <script>
 </script>
 <style scope>
-  .Myheader{
+  .header{
     margin-top: -60px;
     width: 100%;
     height: 100px;

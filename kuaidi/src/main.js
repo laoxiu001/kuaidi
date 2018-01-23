@@ -6,6 +6,7 @@ import router from './router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Myheader from './components/header/header'
+import Myfooter from './components/header/footer'
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
@@ -13,6 +14,10 @@ Vue.use(Element)
 Vue.component('my-header', {
   components: { Myheader },
   template: '<Myheader/>'
+})
+Vue.component('my-footer', {
+  components: { Myfooter },
+  template: '<Myfooter/>'
 })
 new Vue({
   el: '#app',
