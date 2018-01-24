@@ -69,7 +69,7 @@
         </div>
         </el-col>
         <el-col :span="8"><div class=""></div>
-          <a class="fl" style="color: #bababa;font-size: 12px">Archiver|手机版|小黑屋|Comsenz Inc.</a>
+          <a class="fr" style="color: #bababa;font-size: 12px">Archiver|手机版|小黑屋|Comsenz Inc.</a>
         </el-col>
         <el-col :span="4"><div class=""></div>
           &nbsp;

@@ -32,17 +32,17 @@
           <img class="fl" src="../../assets/logo.png" alt="logo">
         </div></el-col>
         <el-col :span="8"><div class="text">
-          <el-menu class="el-menu-demo" mode="horizontal">
+          <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" :default-active="activeIndex">
             <el-menu-item index="1">门户</el-menu-item>
             <el-submenu index="2">
               <template slot="title">论坛</template>
               <el-menu-item index="2-1">主题列表页</el-menu-item>
-              <el-menu-item index="2-3">内容页</el-menu-item>
+              <el-menu-item index="2-2">内容页</el-menu-item>
             </el-submenu>
-            <el-menu-item index="1">咨询</el-menu-item>
-            <el-menu-item index="1">瀑布流</el-menu-item>
-            <el-menu-item index="1">排行榜</el-menu-item>
-            <el-menu-item index="1">导读</el-menu-item>
+            <el-menu-item index="3">咨询</el-menu-item>
+            <el-menu-item index="4">瀑布流</el-menu-item>
+            <el-menu-item index="5">排行榜</el-menu-item>
+            <el-menu-item index="6">导读</el-menu-item>
           </el-menu>
         </div></el-col>
         <el-col :span="4"><div class="search">
@@ -61,9 +61,23 @@
   </div>
 </template>
 <script>
+  export default {
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
 </script>
 <style scope>
   .header{
+    background-color: white;
     margin-top: -60px;
     width: 100%;
     height: 100px;
@@ -80,6 +94,7 @@
   }
   .nav{
     height: 60px;
+    color: #000;
   }
   .search{
     margin-top: 15px;
@@ -89,6 +104,12 @@
   *{
     margin: 0;
     padding: 0;
+  }
+  body{
+    background: #F2F2F2;
+    background-image: url(../../assets/background.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
   }
   /*清除浮动*/
   .cb{
