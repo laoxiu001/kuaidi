@@ -19,9 +19,11 @@ Vue.component('my-footer', {
   components: { Myfooter },
   template: '<Myfooter/>'
 })
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+new Vue(
+  {
+    el: '#app',
+    router,
+    components: { App },
+    template: '<App/>'
+  }
+)

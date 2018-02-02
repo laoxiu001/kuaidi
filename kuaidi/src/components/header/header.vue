@@ -11,9 +11,9 @@
           <a class="clra" href="" style="">收藏本站</a>
         </div></el-col>
         <el-col :span="8"><div class="">
-          <a class="clra fr" href="" style="">注册</a>
+          <a class="clra fr" href="#" style="">注册</a>
           <a class="fr">&nbsp;|&nbsp;</a>
-          <a class="clra fr" href="" style="">登陆</a>
+          <a class="clra fr" href="/login" style="">登陆</a>
         </div></el-col>
         <el-col :span="4"><div class="">
           &nbsp;
@@ -33,7 +33,7 @@
         </div></el-col>
         <el-col :span="8"><div class="text">
           <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" :default-active="activeIndex">
-            <el-menu-item index="1">门户</el-menu-item>
+            <el-menu-item index="1"><a href="/" class="clra">门户</a></el-menu-item>
             <el-submenu index="2">
               <template slot="title">论坛</template>
               <el-menu-item index="2-1">主题列表页</el-menu-item>

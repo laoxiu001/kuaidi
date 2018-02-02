@@ -1,6 +1,5 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div class="index">
-    <my-header></my-header>
     <div class="content_top">
       <div class="picture fl">
         <img class="fl" src="../assets/index/lunbo.png" alt="lunbo" style="width: 455px;height: 270px;">
@@ -10,7 +9,7 @@
       </div>
       <div class="hotnews fl">
         <div class="hotnews_box">
-          <p class="recomend">今日推荐</p>
+          <p class="today_recomend">今日推荐</p>
           <div class="hotnews_new">
             <h4><a>特斯拉充电器紧急召回：存在...</a></h4>
             <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
@@ -34,20 +33,95 @@
       </div>
     </div>
     <div class="content_bottom">
-      <div class="content_bottom_left">
+      <div class="content_bottom_left fl">
         <div class="posts">
-          <div class="posts_img fl"><img src="../assets/index/post.jpg" alt="post_img"></div>
+          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post1.jpg" alt="post_img"></a></div>
           <div class="posts_title"><a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长的三个阶段</a></div>
           <div class="posts_user">
             <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
-            <a href="#" class="clra text13 fl">23123</a>
+            <a href="#" class="clra text13 fl username">23123</a>
             <a class="text13 fl"> &nbsp;| 2017-05-10</a>
           </div>
-          <div class="posts_review" align="left">对于初阶运营人来讲，最需要打磨的两种素质，一是用户视角，站在用户角度看待问题，而非自己天马行空，为了创意而创意没有太</div>
+          <div class="posts_review" align="left">对于初阶运营人来讲，最需要打磨的两种素质，一是用户视角，站在用户角度看待问题，而非自己天马行空，为了创意而创意没</div>
+        </div>
+        <div class="posts">
+          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post2.png" alt="post_img"></a></div>
+          <div class="posts_title"><a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a></div>
+          <div class="posts_user">
+            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
+            <a href="#" class="clra text13 fl username">23123</a>
+            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
+          </div>
+          <div class="posts_review" align="left">需求优先级的划分是个老生常谈的问题，但为什么这个很重要？ 举个例子：如果自己第一次独立负责一款产品时遇到开发Delay ......</div>
+        </div>
+        <div class="posts">
+          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post3.jpg" alt="post_img"></a></div>
+          <div class="posts_title"><a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成熟的今日头条 app 长</a></div>
+          <div class="posts_user">
+            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
+            <a href="#" class="clra text13 fl username">23123</a>
+            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
+          </div>
+          <div class="posts_review" align="left">「我们搞算法的，不喜欢 social……」面对围上来要跟他加微信的媒体同仁们，曹欢欢显出些负担感。 　　作为今日头条 ......</div>
+        </div>
+        <div class="posts">
+          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post4.jpg" alt="post_img"></a></div>
+          <div class="posts_title"><a href="#" class="clra">游泳潜水都不怕 这是一款真正的防水耳机</a></div>
+          <div class="posts_user">
+            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
+            <a href="#" class="clra text13 fl username">23123</a>
+            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
+          </div>
+          <div class="posts_review" align="left">最近在Kickstarter上出现了一款名叫TAYOGO AMP的蓝牙无线耳机，这款耳机最大的特点就是可以做到真正的防水功能。TAYO .....</div>
         </div>
       </div>
+      <div class="content_bottom_right fl">
+        <div style="width: 270px;height:45px;border-bottom: 1px solid #eee;"><h2><span>推荐阅读</span></h2></div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post1.jpg" alt="recomend_reading_img"></div>
+        </div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post2.png" alt="recomend_reading_img"></div>
+        </div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post3.jpg" alt="recomend_reading_img"></div>
+        </div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post1.jpg" alt="recomend_reading_img"></div>
+        </div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post2.png" alt="recomend_reading_img"></div>
+        </div>
+        <div class="recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成</a>
+            <p>2017-05-10</p>
+          </div>
+          <div class="fl"><img class="fl" src="../assets/index/post3.jpg" alt="recomend_reading_img"></div>
+        </div>
+      </div>
+      <div class="cb"></div>
     </div>
-    <my-footer></my-footer>
   </div>
 </template>
 
@@ -68,7 +142,7 @@
     width: 300px;
     height:375px;
   }
-  .recomend{
+  .today_recomend{
     width: 95px;
     height: 93px;
     position: absolute;
@@ -101,29 +175,45 @@
   }
   .posts{
     padding-top: 30px;
-    width: 650px;
+    padding-left: 10px;
+    width: 665px;
     height:160px;
     background-color: white;
     box-shadow: 0px 2px 5px #888888;
   }
+  .posts_img{
+    width: 220px;
+    height: 135px;
+    overflow: hidden;
+  }
+  .posts_img img:hover{
+    transition: all 0.6s;
+    transform: scale(1.2);/*鼠标经过图片放大的倍数*/
+  }
   .posts_title{
-    width: 415px;
+    width: 400px;
     height:43px;
     margin-left: 230px;
-    font-weight: 550;
+    font-weight: 600;
     font-size: 18px;
     text-align: left;
   }
+  .posts_title a:hover{
+    color: red;
+  }
   .posts_user{
-    width: 415px;
-    height: 28px;
-    margin-top: 10px;
     margin-left: 10px;
+    margin-top: 15px;
+    width: 400px;
+    height: 28px;
     float: left;
   }
   .posts_user a{
     height: 28px;
     line-height: 28px;
+  }
+  .username:hover{
+    color: red
   }
   .posts_user a img{
     border-radius:20px;
@@ -132,9 +222,54 @@
   }
   .posts_review{
     margin-left: 230px;
-    width: 415px;
+    margin-top: 50px;
+    width: 400px;
     height: 50px;
     font-size: 14px;
     color: #888;
+  }
+  .content_bottom_right{
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 280px;
+    height: 800px;
+    background-color: white;
+  }
+  .content_bottom_right h2 span{
+    float: left;
+    display: inline-block;
+    height: 30px;
+    font-size: 18px;
+    color: #EB0028;
+    font-weight: 400;
+    border-bottom: 2px solid #EB0028;
+  }
+  .recomend_reading{
+    margin-top: 10px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+    width: 270px;
+    height: 90px;
+    border-bottom: 1px solid #eee;
+  }
+  .recomend_reading p{
+    margin-top: 10px;
+  }
+  .recomend_reading img{
+    width: 95px;
+    height: 75px;
+  }
+  .recomend_reading a{
+    display: block;
+    color: #666;
+    width: 160px;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .recomend_reading a:hover{
+    color: red;
   }
 </style>

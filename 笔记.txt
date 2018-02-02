@@ -27,3 +27,12 @@ Vue.component('my-header', {
 ②index.vue下使用该组件：
 <!--头部组件加载-->
 <my-header></my-header>
+
+
+
+3、所有页面地址最后都有#!，如何去掉？
+index.js中开启'history'模式
+const router = new VueRouter({
+  mode: 'history',
+  routes: [...]
+})
