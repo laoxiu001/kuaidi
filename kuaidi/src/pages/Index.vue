@@ -39,15 +39,15 @@
           <div class="posts_img fl"><img src="../assets/index/post.jpg" alt="post_img"></div>
           <div class="posts_title"><a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长的三个阶段</a></div>
           <div class="posts_user">
-            <a href="#" class="clra"><img src="../assets/index/user.gif" alt="avatar"></a>
-            <a href="#" class="clra text13">23123</a>
-            <span class="text13"> | 2017-05-10</span>
+            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
+            <a href="#" class="clra text13 fl">23123</a>
+            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
           </div>
-          <div class="posts_review"></div>
+          <div class="posts_review" align="left">对于初阶运营人来讲，最需要打磨的两种素质，一是用户视角，站在用户角度看待问题，而非自己天马行空，为了创意而创意没有太</div>
         </div>
       </div>
-      <my-footer></my-footer>
     </div>
+    <my-footer></my-footer>
   </div>
 </template>
 
@@ -100,8 +100,9 @@
     width: 1000px;
   }
   .posts{
+    padding-top: 30px;
     width: 650px;
-    height:190px;
+    height:160px;
     background-color: white;
     box-shadow: 0px 2px 5px #888888;
   }
@@ -114,6 +115,7 @@
     text-align: left;
   }
   .posts_user{
+    width: 415px;
     height: 28px;
     margin-top: 10px;
     margin-left: 10px;
@@ -127,5 +129,12 @@
     border-radius:20px;
     width:25px;
     height:25px;
+  }
+  .posts_review{
+    margin-left: 230px;
+    width: 415px;
+    height: 50px;
+    font-size: 14px;
+    color: #888;
   }
 </style>

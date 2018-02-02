@@ -84,7 +84,8 @@
 </script>
 <style scope>
   .footer{
-    margin-top: 500px;
+    width: 100%;
+    margin-top: 30px;
   }
   .url{
     background-color: #333;
