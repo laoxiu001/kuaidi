@@ -11,22 +11,22 @@
         <div class="hotnews_box">
           <p class="today_recomend">今日推荐</p>
           <div class="hotnews_new">
-            <h4><a>特斯拉充电器紧急召回：存在...</a></h4>
+            <h4><a href="#" class="clra">特斯拉充电器紧急召回：存在...</a></h4>
             <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
           </div>
           <hr style="background-color: #f2f2f2">
           <div class="hotnews_new">
-            <h4><a>资本寒冬让创业者融资难，推广...</a></h4>
+            <h4><a href="#" class="clra">资本寒冬让创业者融资难，推广...</a></h4>
             <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
           </div>
           <hr>
           <div class="hotnews_new">
-            <h4><a>一键“约答”校友，哈佛系创业者用知..</a></h4>
+            <h4><a href="#" class="clra">一键“约答”校友，哈佛系创业者用知..</a></h4>
             <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
           </div>
           <hr>
           <div class="hotnews_new">
-            <h4><a>创业者花钱要谨慎，多专注于小的事...</a></h4>
+            <h4><a href="#" class="clra">创业者花钱要谨慎，多专注于小的事...</a></h4>
             <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
           </div>
         </div>
@@ -168,6 +168,9 @@
     line-height: 20px;
     height: 42px;
     margin-top: 10px;
+  }
+  .hotnews_new h4 a:hover{
+    color: red;
   }
   .content_bottom{
     margin:0 auto;
