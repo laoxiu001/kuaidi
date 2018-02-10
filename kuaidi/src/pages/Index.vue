@@ -236,7 +236,6 @@
     padding-left: 20px;
     padding-top: 15px;
     width: 280px;
-    height: 800px;
     background-color: white;
   }
   .content_bottom_right h2 span{

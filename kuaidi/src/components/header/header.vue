@@ -11,7 +11,7 @@
           <a class="clra" href="" style="">收藏本站</a>
         </div></el-col>
         <el-col :span="8"><div class="">
-          <a class="clra fr" href="#" style="">注册</a>
+          <a class="clra fr" href="/register" style="">注册</a>
           <a class="fr">&nbsp;|&nbsp;</a>
           <a class="clra fr" href="/login" style="">登陆</a>
         </div></el-col>
@@ -39,7 +39,7 @@
               <el-menu-item index="2-1">主题列表页</el-menu-item>
               <el-menu-item index="2-2">内容页</el-menu-item>
             </el-submenu>
-            <el-menu-item index="3">咨询</el-menu-item>
+            <el-menu-item index="3">资讯</el-menu-item>
             <el-menu-item index="4">瀑布流</el-menu-item>
             <el-menu-item index="5">排行榜</el-menu-item>
             <el-menu-item index="6">导读</el-menu-item>
