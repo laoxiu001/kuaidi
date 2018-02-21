@@ -34,15 +34,15 @@
         <el-col :span="8"><div class="text">
           <el-menu class="el-menu-demo" mode="horizontal" @select="handleSelect" :default-active="activeIndex">
             <el-menu-item index="1"><a href="/" class="clra">门户</a></el-menu-item>
-            <el-submenu index="2">
-              <template slot="title">论坛</template>
-              <el-menu-item index="2-1">主题列表页</el-menu-item>
-              <el-menu-item index="2-2">内容页</el-menu-item>
-            </el-submenu>
-            <el-menu-item index="3">资讯</el-menu-item>
-            <el-menu-item index="4">瀑布流</el-menu-item>
+            <el-menu-item index="2">资讯</el-menu-item>
+            <el-menu-item index="3">论坛</el-menu-item>
+            <el-menu-item index="4"><a href="/pinterest" class="clra">工艺品展示</a></el-menu-item>
             <el-menu-item index="5">排行榜</el-menu-item>
-            <el-menu-item index="6">导读</el-menu-item>
+            <el-submenu index="6">
+              <template slot="title">回收</template>
+              <el-menu-item index="6-1"><a href="" class="clra">我要回收</a></el-menu-item>
+              <el-menu-item index="6-1"><a href="/agreement" class="clra">回收协议</a></el-menu-item>
+            </el-submenu>
           </el-menu>
         </div></el-col>
         <el-col :span="4"><div class="search">
@@ -160,6 +160,11 @@
     text_align: center;
   }
   /*文字居中*/
+  /*12号字体*/
+  .text12{
+    font-size: 12px;
+  }
+  /*12号字体*/
   /*13号字体*/
   .text13{
     font-size: 13px;

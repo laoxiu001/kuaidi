@@ -36,3 +36,8 @@ const router = new VueRouter({
   mode: 'history',
   routes: [...]
 })
+
+
+4、
+div下内容无法显示：
+至少为div设置宽度（高度）

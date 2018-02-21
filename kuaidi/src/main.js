@@ -6,7 +6,7 @@ import router from './router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import Myheader from './components/header/header'
-import Myfooter from './components/header/footer'
+import Myfooter from './components/footer/footer'
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
