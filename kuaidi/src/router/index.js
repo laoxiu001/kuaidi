@@ -5,6 +5,7 @@ import Login from '@/pages/login/Login'
 import Register from '@/pages/login/Register'
 import Pinterest from '@/pages/Pinterest'
 import Agreement from '@/pages/recycle/Agreement'
+import Appraisal from '@/pages/recycle/Appraisal'
 
 Vue.use(Router)
 export default new Router({
@@ -34,6 +35,11 @@ export default new Router({
       path: '/agreement',
       name: 'Agreement',
       component: Agreement
+    },
+    {
+      path: '/appraisal',
+      name: 'Appraisal',
+      component: Appraisal
     },
   ]
 })

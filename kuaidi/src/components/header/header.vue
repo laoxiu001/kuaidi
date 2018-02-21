@@ -40,7 +40,7 @@
             <el-menu-item index="5">排行榜</el-menu-item>
             <el-submenu index="6">
               <template slot="title">回收</template>
-              <el-menu-item index="6-1"><a href="" class="clra">我要回收</a></el-menu-item>
+              <el-menu-item index="6-1"><a href="/appraisal" class="clra">我要回收</a></el-menu-item>
               <el-menu-item index="6-1"><a href="/agreement" class="clra">回收协议</a></el-menu-item>
             </el-submenu>
           </el-menu>
