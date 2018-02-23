@@ -6,6 +6,7 @@ import Register from '@/pages/login/Register'
 import Pinterest from '@/pages/Pinterest'
 import Agreement from '@/pages/recycle/Agreement'
 import Appraisal from '@/pages/recycle/Appraisal'
+import Publish from '@/pages/publish'
 
 Vue.use(Router)
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
       path: '/appraisal',
       name: 'Appraisal',
       component: Appraisal
+    },
+    {
+      path: '/publish',
+      name: 'Publish',
+      component: Publish
     },
   ]
 })
