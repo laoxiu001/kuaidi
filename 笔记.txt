@@ -41,3 +41,6 @@ const router = new VueRouter({
 4、
 div下内容无法显示：
 至少为div设置宽度（高度）
+
+5、父div高度根据内容自适应：
+overflow:hidden;

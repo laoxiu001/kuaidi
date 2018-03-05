@@ -35,8 +35,8 @@
     <div class="content_bottom">
       <div class="content_bottom_left fl">
         <div class="posts">
-          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post1.jpg" alt="post_img"></a></div>
-          <div class="posts_title"><a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长的三个阶段</a></div>
+          <div class="posts_img fl"><a href="/thread" class="clra"><img src="../assets/index/post1.jpg" alt="post_img"></a></div>
+          <div class="posts_title"><a href="/thread" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长的三个阶段</a></div>
           <div class="posts_user">
             <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
             <a href="#" class="clra text13 fl username">23123</a>
