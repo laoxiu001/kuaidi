@@ -9,6 +9,7 @@ import VueHtml5Editor from 'vue-html5-editor'
 import 'font-awesome/css/font-awesome.css'
 import Myheader from './components/header/header'
 import Myfooter from './components/footer/footer'
+import VueResource from "vue-resource"
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
@@ -21,6 +22,9 @@ Vue.component('my-footer', {
   components: { Myfooter },
   template: '<Myfooter/>'
 });
+//配置POST、GET方法
+Vue.use(VueResource);
+
 Vue.use(VueHtml5Editor, {
   // 全局组件名称，使用new VueHtml5Editor(options)时该选项无效
   // global component name

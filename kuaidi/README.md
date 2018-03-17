@@ -27,4 +27,7 @@ npm run e2e
 npm test
 ```
 
+# 端口监听
+node ./server/index.js
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
