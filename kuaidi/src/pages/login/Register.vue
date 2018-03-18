@@ -20,7 +20,7 @@
               </el-form-item>
               <el-form-item label="验证码">
                 <el-input style="width: 160px;float: left" v-model="code" placeholder="请输入验证码"></el-input>
-                <input type="button" @click="createCode" v-model="checkCode" style="width: 60px;height: 30px;background-color:transparent;border:0px;"/>
+                <input type="button" @click="createCode" v-model="checkCode" style="width: 80px;height: 35px;font-size: 17px;background-color:transparent;border:0px;"/>
               </el-form-item>
               <el-form-item size="large">
                 <el-button class="fl btn_login" @click="addUser">注册</el-button>
@@ -59,25 +59,25 @@
         var checkCode = this.checkCode;
 
         if (username==''){
-          this.$message('请输入用户名');
+          this.$message.error('请输入用户名');
           return;
         }else if(password==''){
-          this.$message('请输入密码');
+          this.$message.error('请输入密码');
           return;
         }else if(password_conf==''){
-          this.$message('请输入确认密码');
+          this.$message.error('请输入确认密码');
           return;
         }else if(email==''){
-          this.$message('请输入邮箱');
+          this.$message.error('请输入邮箱');
           return;
         }else if(code==''){
-          this.$message('请输入验证码');
+          this.$message.error('请输入验证码');
           return;
         }else if(code.toUpperCase()!=checkCode){
-          this.$message('请输入正确的验证码');
+          this.$message.error('请输入正确的验证码');
           return;
         }else if(password!=password_conf){
-          this.$message('请确保两次输入的密码一致');
+          this.$message.error('请确保两次输入的密码一致');
           return;
         }else {
           /* 执行注册 */
@@ -87,16 +87,17 @@
             email: email
           },{}).then((response) => {
             console.log(response);
-            alert(response.data == 'ok');
-            alert(response,status);
             /* userApi接口传值-1，该用户存在 */
             if(response.data == -1){
-              this.$message('对不起，该账号已存在');
-            }else if(response,status == 200 && response.data.equals('ok')){
-              this.$message('恭喜您，注册成功,3秒后进入登陆前页面');
+              this.$message.error('对不起，该账号已存在');
+            }else if(response.data == 'ok'){
+              this.$message('恭喜您，注册成功，现在进入登陆前页面');
               /*注册成功之后再跳回登录页*/
               this.clear();//清空文本
               this.createCode();//更新验证码
+              this.$router.push({ path: '/' })
+            }else{
+              this.$message.error('对不起，注册失败，请联系管理员');
             }
           })
         }
