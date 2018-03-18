@@ -5,23 +5,24 @@
         <div class="box_top"><h3>登录到 Comsenz Inc. 论坛</h3></div>
         <div class="box_bottom">
           <div class="form">
-            <el-form ref="loginForm" v-model="loginForm" label-width="80px" label-position="left">
-              <el-form-item prop="username" label="用户名">
-                <el-input v-model="loginForm.username"></el-input>
+            <el-form label-width="80px" label-position="left" class="fl">
+              <el-form-item label="用户名">
+                <el-input v-model="username"></el-input>
               </el-form-item>
-              <el-form-item prop="password" label="密码">
-                <el-input type="password" v-model="loginForm.password"></el-input>
+              <el-form-item label="密码">
+                <el-input type="password" v-model="password"></el-input>
               </el-form-item>
-              <el-form-item prop="question" label="安全问题" class="fl">
-                <el-select v-model="loginForm.question" placeholder="安全问题(未设置请忽略)">
+              <el-form-item label="安全问题">
+                <el-select v-model="question" placeholder="安全问题(未设置请忽略)">
+                  <el-option label="安全问题(未设置请忽略)" value="none"></el-option>
                   <el-option label="母亲的名字" value="mother"></el-option>
                   <el-option label="爷爷的名字" value="grandfather"></el-option>
                   <el-option label="出生的城市" value="city"></el-option>
                   <el-option label="一位老师的名字" value="teacher"></el-option>
                 </el-select>
               </el-form-item>
-              <el-form-item prop="autoLogin">
-                <el-checkbox-group v-model="loginForm.autoLogin">
+              <el-form-item>
+                <el-checkbox-group v-model="autoLogin">
                   <el-checkbox label="下次自动登录" name="type" class="fl"></el-checkbox>
                 </el-checkbox-group>
               </el-form-item>
@@ -39,62 +40,54 @@
 <script>
   export default {
     data(){
-      const validateEmail = (rule, value, callback) => {
-        if (!isWscnEmail(value)) {
-          //export function isWscnEmail(str) {
-          //const reg = /^[a-z0-9](?:[-_.+]?[a-z0-9]+)*@wz\.com$/i;
-          //return reg.test(str.trim());
-          //}
-          callback(new Error('请输入正确的合法邮箱'));
-        } else {
-          callback();
-        }
-      };
-      const validatePass = (rule, value, callback) => {
-        if (value.length < 6) {
-          callback(new Error('密码不能小于6位'));
-        } else {
-          callback();
-        }
-      };
       return {
-        loginForm: {
-          username: '',
-          password: '',
-          question: 'what is your name',
-          autoLogin :'Y',
-        },
-        loginRules: {
-          email: [
-            { required: true, trigger: 'blur', validator: validateEmail }
-          ],
-          password: [
-            { required: true, trigger: 'blur', validator: validatePass }
-          ]
-        },
-        loading: false,
-        showDialog: false
+        username: '',
+        password: '',
+        question: '',
+        autoLogin :'',
       }
     },
     methods: {
       login() {
-        this.$refs.loginForm.validate(valid => {
-          if (valid) {
-            this.loading = false;
-            this.$store.dispatch('loginByUsername',this.loginForm).then(() => {
-              this.loading = false;
-              this.$router.push({ path: '/'});
-              //this.showDialog = true;
-            }).catch(err => {
-              this.$message.error(err);
-              this.loading = false;
-            });
-          }else{
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      }
+        var username = this.username;
+        var password = this.password;
+
+        if (username==''){
+          this.$message.error('请输入用户名');
+          return;
+        }else if(password==''){
+          this.$message.error('请输入密码');
+          return;
+        }else{
+          this.$http.post('/api/user/selectUser', {
+            username: username,
+            password: password
+          },{}).then((response) => {
+            console.log(response);
+            if(response.data == -1){
+              /* userApi接口传值-1，该用户不存在 */
+              this.$message.error('对不起，用户名错误');
+            }else if(response.data == 0){
+              /* userApi接口传值0，该密码错误 */
+              this.$message.error('对不起，用户密码错误');
+            }else if(response.data == 'ok'){
+              this.$message('恭喜您，注册成功，现在进入登陆前页面');
+              /*注册成功之后再跳回登录页*/
+              this.clear();//清空文本
+              this.$router.push({ path: '/' })
+            }else{
+              this.$message.error('对不起，登陆异常，请联系管理员解决');
+            }
+          })
+        }
+      },
+      /* 清空注册文本框数据 */
+      clear(){
+        this.username = '',
+        this.password = '',
+        this.question = '',
+        this.autoLogin = ''
+      },
     }
   }
 </script>

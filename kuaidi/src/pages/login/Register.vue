@@ -87,17 +87,17 @@
             email: email
           },{}).then((response) => {
             console.log(response);
-            /* userApi接口传值-1，该用户存在 */
+            /* userApi接口传值-1，该用户已经存在 */
             if(response.data == -1){
               this.$message.error('对不起，该账号已存在');
             }else if(response.data == 'ok'){
-              this.$message('恭喜您，注册成功，现在进入登陆前页面');
+              this.$message('恭喜您，注册成功，现在进入登陆页面');
               /*注册成功之后再跳回登录页*/
               this.clear();//清空文本
               this.createCode();//更新验证码
-              this.$router.push({ path: '/' })
+              this.$router.push({ path: '/login' })
             }else{
-              this.$message.error('对不起，注册失败，请联系管理员');
+              this.$message.error('对不起，注册异常，请联系管理员解决');
             }
           })
         }
