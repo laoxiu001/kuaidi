@@ -91,11 +91,13 @@
             if(response.data == -1){
               this.$message.error('对不起，该账号已存在');
             }else if(response.data == 'ok'){
-              this.$message('恭喜您，注册成功，现在进入登陆页面');
+              this.$message('恭喜您，注册成功，3秒后自动进入登陆页面');
               /*注册成功之后再跳回登录页*/
               this.clear();//清空文本
               this.createCode();//更新验证码
-              this.$router.push({ path: '/login' })
+              setTimeout(() => {
+                this.$router.push({ path: '/login' })
+              }, 3000);
             }else{
               this.$message.error('对不起，注册异常，请联系管理员解决');
             }

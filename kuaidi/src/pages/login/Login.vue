@@ -66,15 +66,17 @@
             console.log(response);
             if(response.data == -1){
               /* userApi接口传值-1，该用户不存在 */
-              this.$message.error('对不起，用户名错误');
+              this.$message.error('对不起，用户名不存在');
             }else if(response.data == 0){
               /* userApi接口传值0，该密码错误 */
               this.$message.error('对不起，用户密码错误');
             }else if(response.data == 'ok'){
-              this.$message('恭喜您，注册成功，现在进入登陆前页面');
+              this.$message('登陆成功，3秒后自动进入登陆前页面');
               /*注册成功之后再跳回登录页*/
               this.clear();//清空文本
-              this.$router.push({ path: '/' })
+              setTimeout(() => {
+                this.$router.push({ path: '/appraisal' })
+              }, 3000);
             }else{
               this.$message.error('对不起，登陆异常，请联系管理员解决');
             }
