@@ -52,65 +52,45 @@
     </div>
 
     <div class="content_bottom">
-      <div class="item">
+
+      <div class="item" v-for="item in list">
+        <div class="item_img"><img :src="item" alt=""></div>
+      </div>
+      <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+
+      <!--<div class="item">
         <div class="item_img"><img src="../assets/pinterest/img/1.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/2.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/3.png" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/4.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/5.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/6.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/7.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/8.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/9.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/10.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/11.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/12.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/13.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/14.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/15.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/16.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/17.jpg" alt=""></div>
-      </div>
-      <div class="item">
-        <div class="item_img"><img src="../assets/pinterest/img/18.jpg" alt=""></div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
 
 <script>
+  /* 导入无限加载插件 */
+  import InfiniteLoading from 'vue-infinite-loading';
+
+  export default {
+    data() {
+      return {
+        list: [],
+      };
+    },
+    methods: {
+      infiniteHandler($state) {
+        setTimeout(() => {
+          const temp = [];
+          for (let i = this.list.length; i <= this.list.length + 5; i++) {
+            temp.push('../../static/pinterest/img/'+ i + '.jpg');
+          }
+          this.list = this.list.concat(temp);
+          $state.loaded();
+        }, 1000);
+      },
+    },
+    components: {
+      InfiniteLoading,
+    },
+  };
 </script>
 
 <style scope>
