@@ -10,114 +10,35 @@
       <div class="hotnews fl">
         <div class="hotnews_box">
           <p class="today_recomend">今日推荐</p>
-          <div class="hotnews_new">
-            <h4><a href="#" class="clra">特斯拉充电器紧急召回：存在...</a></h4>
-            <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
-          </div>
-          <hr style="background-color: #f2f2f2">
-          <div class="hotnews_new">
-            <h4><a href="#" class="clra">资本寒冬让创业者融资难，推广...</a></h4>
-            <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
-          </div>
-          <hr>
-          <div class="hotnews_new">
-            <h4><a href="#" class="clra">一键“约答”校友，哈佛系创业者用知..</a></h4>
-            <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
-          </div>
-          <hr>
-          <div class="hotnews_new">
-            <h4><a href="#" class="clra">创业者花钱要谨慎，多专注于小的事...</a></h4>
-            <p align="left">据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电</p>
+          <div class="hotnews_new" v-for="item in today_recomend">
+            <h4><a href="#" class="clra">{{ item.title}}</a></h4>
+            <p align="left">{{ item.review}}</p>
+            <hr style="background-color: #f2f2f2">
           </div>
         </div>
       </div>
     </div>
     <div class="content_bottom">
-      <div class="content_bottom_left fl">
-        <div class="posts">
-          <div class="posts_img fl"><a href="/thread" class="clra"><img src="../assets/index/post1.jpg" alt="post_img"></a></div>
-          <div class="posts_title"><a href="/thread" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长的三个阶段</a></div>
-          <div class="posts_user">
-            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
-            <a href="#" class="clra text13 fl username">23123</a>
-            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
+      <div class="content_bottom_right fr">
+        <div style="width: 270px;height:45px;border-bottom: 1px solid #eee;"><h2><span>推荐阅读</span></h2></div>
+        <div class="recomend_reading" v-for="item in recomend_reading">
+          <div class="fl">
+            <a href="#" class="clra">{{ item.title }}</a>
+            <p>{{ item.date }}</p>
           </div>
-          <div class="posts_review" align="left">对于初阶运营人来讲，最需要打磨的两种素质，一是用户视角，站在用户角度看待问题，而非自己天马行空，为了创意而创意没</div>
-        </div>
-        <div class="posts">
-          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post2.png" alt="post_img"></a></div>
-          <div class="posts_title"><a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a></div>
-          <div class="posts_user">
-            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
-            <a href="#" class="clra text13 fl username">23123</a>
-            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
-          </div>
-          <div class="posts_review" align="left">需求优先级的划分是个老生常谈的问题，但为什么这个很重要？ 举个例子：如果自己第一次独立负责一款产品时遇到开发Delay ......</div>
-        </div>
-        <div class="posts">
-          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post3.jpg" alt="post_img"></a></div>
-          <div class="posts_title"><a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成熟的今日头条 app 长</a></div>
-          <div class="posts_user">
-            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
-            <a href="#" class="clra text13 fl username">23123</a>
-            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
-          </div>
-          <div class="posts_review" align="left">「我们搞算法的，不喜欢 social……」面对围上来要跟他加微信的媒体同仁们，曹欢欢显出些负担感。 　　作为今日头条 ......</div>
-        </div>
-        <div class="posts">
-          <div class="posts_img fl"><a href="#" class="clra"><img src="../assets/index/post4.jpg" alt="post_img"></a></div>
-          <div class="posts_title"><a href="#" class="clra">游泳潜水都不怕 这是一款真正的防水耳机</a></div>
-          <div class="posts_user">
-            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
-            <a href="#" class="clra text13 fl username">23123</a>
-            <a class="text13 fl"> &nbsp;| 2017-05-10</a>
-          </div>
-          <div class="posts_review" align="left">最近在Kickstarter上出现了一款名叫TAYOGO AMP的蓝牙无线耳机，这款耳机最大的特点就是可以做到真正的防水功能。TAYO .....</div>
+          <div class="fl"><img class="fl" :src="item.src"></div>
         </div>
       </div>
-      <div class="content_bottom_right fl">
-        <div style="width: 270px;height:45px;border-bottom: 1px solid #eee;"><h2><span>推荐阅读</span></h2></div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长</a>
-            <p>2017-05-10</p>
+      <div class="content_bottom_left fl" v-for="item in post">
+        <div class="posts">
+          <div class="posts_img fl"><a href="/thread" class="clra"><img :src="item.src" alt="post_img"></a></div>
+          <div class="posts_title"><a href="/thread" class="clra">{{ item.title }}</a></div>
+          <div class="posts_user">
+            <a href="#" class="clra fl"><img src="../assets/index/user.gif" alt="avatar">&nbsp;</a>
+            <a href="#" class="clra text13 fl username">{{ item.user }}</a>
+            <a class="text13 fl"> &nbsp;| {{ item.date }}</a>
           </div>
-          <div class="fl"><img class="fl" src="../assets/index/post1.jpg" alt="recomend_reading_img"></div>
-        </div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a>
-            <p>2017-05-10</p>
-          </div>
-          <div class="fl"><img class="fl" src="../assets/index/post2.png" alt="recomend_reading_img"></div>
-        </div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成</a>
-            <p>2017-05-10</p>
-          </div>
-          <div class="fl"><img class="fl" src="../assets/index/post3.jpg" alt="recomend_reading_img"></div>
-        </div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">QQ运营女王刘凌：小白到大神，谈运营人成长</a>
-            <p>2017-05-10</p>
-          </div>
-          <div class="fl"><img class="fl" src="../assets/index/post1.jpg" alt="recomend_reading_img"></div>
-        </div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">第一次负责从0到1的产品时要注意哪几点？</a>
-            <p>2017-05-10</p>
-          </div>
-          <div class="fl"><img class="fl" src="../assets/index/post2.png" alt="recomend_reading_img"></div>
-        </div>
-        <div class="recomend_reading">
-          <div class="fl">
-            <a href="#" class="clra">算法架构师曹欢欢：给你看下，被调教得很成</a>
-            <p>2017-05-10</p>
-          </div>
-          <div class="fl"><img class="fl" src="../assets/index/post3.jpg" alt="recomend_reading_img"></div>
+          <div class="posts_review" align="left">{{ item.review }}</div>
         </div>
       </div>
       <div class="cb"></div>
@@ -126,6 +47,82 @@
 </template>
 
 <script>
+  export default {
+    data () {
+      return {
+        today_recomend: [
+          {
+            title: '特斯拉充电器紧急召回：存在...',
+            review: '据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电',
+          },
+          {
+            title: '资本寒冬让创业者融资难，推广...',
+            review: '据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电',
+          },
+          {
+            title: '一键“约答”校友，哈佛系创业者用知..',
+            review: '据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电',
+          },
+          {
+            title: '创业者花钱要谨慎，多专注于小的事...',
+            review: '据特斯拉周二发给客户的电子邮件显示，今年11月，该公司的两位客户声称遭遇汽车充电',
+          },
+        ],
+        post: [
+          {
+            src: require('../assets/index/post1.jpg'),
+            title: 'QQ运营女王刘凌：小白到大神，谈运营人成长',
+            user: '不存在拥有',
+            date: '2017-05-10',
+            review: '对于初阶运营人来讲，最需要打磨的两种素质，一是用户视角，站在用户角度看待问题，而非自己天马行空，为了创意而创意没',
+          },
+          {
+            src: require('../assets/index/post2.png'),
+            title: '第一次负责从0到1的产品时要注意哪几点？',
+            user: '个地方个人',
+            date: '2017-05-20',
+            review: '需求优先级的划分是个老生常谈的问题，但为什么这个很重要？ 举个例子：如果自己第一次独立负责一款产品时遇到开发Delay',
+          },
+          {
+            src: require('../assets/index/post3.jpg'),
+            title: '算法架构师曹欢欢：给你看下，被调教得很成熟的今日头条 app 长',
+            user: '方同意',
+            date: '2017-05-20',
+            review: '「我们搞算法的，不喜欢 social……」面对围上来要跟他加微信的媒体同仁们，曹欢欢显出些负担感。 　　作为今日头条 ......',
+          },
+          {
+            src: require('../assets/index/post4.jpg'),
+            title: '游泳潜水都不怕 这是一款真正的防水耳机',
+            user: '你太软弱',
+            date: '2017-04-10',
+            review: '最近在Kickstarter上出现了一款名叫TAYOGO AMP的蓝牙无线耳机，这款耳机最大的特点就是可以做到真正的防水功能。TAYO .....',
+          },
+        ],
+        recomend_reading: [
+          {
+            title: 'QQ运营女王刘凌：小白到大神，谈运营人成长',
+            date: '2017-05-10',
+            src: require('../assets/index/post1.jpg'),
+          },
+          {
+            title: '第一次负责从0到1的产品时要注意哪几点？',
+            date: '2017-07-10',
+            src: require('../assets/index/post2.png'),
+          },
+          {
+            title: '算法架构师曹欢欢：给你看下，被调教得很成',
+            date: '2017-02-15',
+            src: require('../assets/index/post3.jpg'),
+          },
+          {
+            title: '游泳潜水都不怕 这是一款真正的防水耳机',
+            date: '2017-07-15',
+            src: require('../assets/index/post4.jpg'),
+          },
+        ],
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -232,7 +229,7 @@
     color: #888;
   }
   .content_bottom_right{
-    margin-left: 10px;
+    margin-right: 15px;
     padding-left: 20px;
     padding-top: 15px;
     width: 280px;
