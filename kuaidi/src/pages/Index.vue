@@ -2,10 +2,15 @@
   <div class="index">
     <div class="content_top">
       <div class="picture fl">
-        <img class="fl" src="../assets/index/lunbo.png" alt="lunbo" style="width: 455px;height: 270px;">
-        <img class="fl" src="../assets/index/img2.png" alt="img2" style="display: block">
-        <img class="fl" src="../assets/index/img1.jpg" alt="img1" style="display: block">
-        <div class="cb"></div>
+        <div class="block">
+          <span class="demonstration"><!--今日要闻--></span>
+          <el-carousel height="320px" indicator-position="outside">
+            <el-carousel-item v-for="item in carousel" :key="item">
+              <h3>{{ item.title }}</h3>
+              <img :src="item.src" alt="" style="width: 600px;margin-top: 20px">
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       </div>
       <div class="hotnews fl">
         <div class="hotnews_box">
@@ -50,6 +55,20 @@
   export default {
     data () {
       return {
+        carousel: [
+          {
+            title: '特斯拉充电器紧急召回：存在...',
+            src: require('../assets/index/img1.jpg'),
+          },
+          {
+            title: '资本寒冬让创业者融资难，推广...',
+            src: require('../assets/index/img2.png'),
+          },
+          {
+            title: '一键“约答”校友，哈佛系创业者用知..',
+            src: require('../assets/index/img3.png'),
+          },
+        ],
         today_recomend: [
           {
             title: '特斯拉充电器紧急召回：存在...',
@@ -132,6 +151,7 @@
     margin:15px auto;
   }
   .picture{
+    margin-top: 20px;
     height: 270px;
     width: 685px;
   }
