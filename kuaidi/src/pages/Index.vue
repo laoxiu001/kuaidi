@@ -5,7 +5,7 @@
         <div class="block">
           <span class="demonstration"><!--今日要闻--></span>
           <el-carousel height="320px" indicator-position="outside">
-            <el-carousel-item v-for="item in carousel" :key="item">
+            <el-carousel-item v-for="item in carousel" :key="carousel.title">
               <h3>{{ item.title }}</h3>
               <img :src="item.src" alt="" style="width: 600px;margin-top: 20px">
             </el-carousel-item>
