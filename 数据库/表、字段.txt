@@ -11,12 +11,22 @@ user用户数据表
 		4：高级会员
 		5：金牌会员
 		6：论坛元老
+	title发表主题数
+	post发表帖子数
+	integral用户积分
 
 
 post帖子内容表
 	id编号
-	user_id发帖用户编号
+	username用户名
+	content帖子内容
+	date发表时日期
 	
+
+
+
+
+
 
 
 
