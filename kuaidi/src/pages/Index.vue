@@ -140,26 +140,63 @@
           },
         ],
       }
+    },
+    mounted () {
+      this.list();
+    },
+    methods: {
+      list(){
+        if(this.newUsername == "" || this.newage == ""){
+          alert("请输入用户名或密码")
+        }else{
+          let data = {'username':this.newUsername,'age':this.newage}
+          this.$http.post('/api/user/selectPost').then((res)=>{
+            console.log(res)
+            /*接口的传值是(-1,该用户已存在)*/
+            if(res.data == -1) {
+              this.tishi = "该账号已存在"
+              this.showTishi = true
+              this.username = ''
+              this.age = ''
+            }
+            else if(res.status == 200){
+              this.tishi = "注册成功"
+              this.showTishi = true
+              this.username = ''
+              this.age = ''
+              /*注册成功之后再跳回登录页*/
+              setTimeout(function(){
+                this.showRegister = false
+                this.showLogin = true
+                this.showTishi = false
+              }.bind(this),2000)
+            }
+          })
+        }
+      }
     }
-  }
+}
 </script>
 
 <style scoped>
-  .content_top{
+  .content_top {
     width: 1000px;
     height: 370px;
-    margin:15px auto;
+    margin: 15px auto;
   }
-  .picture{
+
+  .picture {
     margin-top: 20px;
     height: 270px;
     width: 685px;
   }
-  .hotnews{
+
+  .hotnews {
     width: 300px;
-    height:375px;
+    height: 375px;
   }
-  .today_recomend{
+
+  .today_recomend {
     width: 95px;
     height: 93px;
     position: absolute;
@@ -169,16 +206,19 @@
     overflow: hidden;
     background: url("../assets/index/recomend.png") no-repeat -13px -2px;
   }
-  .hotnews{
+
+  .hotnews {
     background-color: white;
   }
-  .hotnews_new{
+
+  .hotnews_new {
     margin-top: 10px;
     margin-left: 15px;
     width: 270px;
-    height:80px;
+    height: 80px;
   }
-  .hotnews_new p{
+
+  .hotnews_new p {
     width: 260px;
     font-size: 13px;
     color: #999;
@@ -186,61 +226,73 @@
     height: 42px;
     margin-top: 10px;
   }
-  .hotnews_new h4 a:hover{
+
+  .hotnews_new h4 a:hover {
     color: red;
   }
-  .content_bottom{
-    margin:0 auto;
+
+  .content_bottom {
+    margin: 0 auto;
     width: 1000px;
   }
-  .posts{
+
+  .posts {
     padding-top: 30px;
     padding-left: 10px;
     width: 665px;
-    height:160px;
+    height: 160px;
     background-color: white;
     box-shadow: 0px 2px 5px #888888;
   }
-  .posts_img{
+
+  .posts_img {
     width: 220px;
     height: 135px;
     overflow: hidden;
   }
-  .posts_img img:hover{
+
+  .posts_img img:hover {
     transition: all 0.6s;
-    transform: scale(1.2);/*鼠标经过图片放大的倍数*/
+    transform: scale(1.2); /*鼠标经过图片放大的倍数*/
   }
-  .posts_title{
+
+  .posts_title {
     width: 400px;
-    height:43px;
+    height: 43px;
     margin-left: 230px;
     font-weight: 600;
     font-size: 18px;
     text-align: left;
   }
-  .posts_title a:hover{
+
+  .posts_title a:hover {
     color: red;
   }
-  .posts_user{
+
+  .posts_user {
     margin-left: 10px;
     margin-top: 15px;
     width: 400px;
     height: 28px;
     float: left;
   }
-  .posts_user a{
+
+  .posts_user a {
     height: 28px;
     line-height: 28px;
   }
-  .username:hover{
+
+  .username:hover {
     color: red
   }
-  .posts_user a img{
-    border-radius:20px;
-    width:25px;
-    height:25px;
+
+  .posts_user a img {
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
   }
-  .posts_review{
+
+  .posts_review {
     margin-left: 230px;
     margin-top: 50px;
     width: 400px;
@@ -248,14 +300,16 @@
     font-size: 14px;
     color: #888;
   }
-  .content_bottom_right{
+
+  .content_bottom_right {
     margin-right: 15px;
     padding-left: 20px;
     padding-top: 15px;
     width: 280px;
     background-color: white;
   }
-  .content_bottom_right h2 span{
+
+  .content_bottom_right h2 span {
     float: left;
     display: inline-block;
     height: 30px;
@@ -264,7 +318,8 @@
     font-weight: 400;
     border-bottom: 2px solid #EB0028;
   }
-  .recomend_reading{
+
+  .recomend_reading {
     margin-top: 10px;
     text-align: left;
     color: #666;
@@ -273,14 +328,17 @@
     height: 90px;
     border-bottom: 1px solid #eee;
   }
-  .recomend_reading p{
+
+  .recomend_reading p {
     margin-top: 10px;
   }
-  .recomend_reading img{
+
+  .recomend_reading img {
     width: 95px;
     height: 75px;
   }
-  .recomend_reading a{
+
+  .recomend_reading a {
     display: block;
     color: #666;
     width: 160px;
@@ -288,7 +346,8 @@
     font-size: 14px;
     font-weight: 400;
   }
-  .recomend_reading a:hover{
+
+  .recomend_reading a:hover {
     color: red;
   }
 </style>

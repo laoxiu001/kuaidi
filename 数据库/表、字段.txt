@@ -18,6 +18,7 @@ user用户数据表
 
 post帖子内容表
 	id编号
+	title文章标题
 	username用户名
 	content帖子内容
 	date发表时日期

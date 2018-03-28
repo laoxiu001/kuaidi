@@ -69,4 +69,34 @@ router.post('/selectUser', (req,res) => {
   })
 });
 
+//展示帖子数据
+router.post('/selectPost', (req,res) => {
+  var sql_name = $sql.user.select_name;
+  var sql_password = $sql.user.select_password;
+  var sql_post = $sql.user.select_post;
+  var params = req.body;
+  conn.query(sql_post,function(err, result) {
+    if(err) {
+      console.log(err)
+    }
+    if(result[0]===undefined) {
+      res.send('-1')    //查询不到帖子数据，data返回-1
+    }else {
+      conn.query(sql_password,params.password, function(err, result) {
+        if(err) {
+          console.log(err)
+        }
+        if(result[0]===undefined) {
+          res.send('0')    //username正确后，password错误，data返回 0
+        }else {
+          jsonWrite(res, result);
+        }
+      })
+      jsonWrite(res, result);
+      console.log(res);
+      console.log(result);
+    }
+  })
+});
+
 module.exports = router;
