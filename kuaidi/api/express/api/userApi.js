@@ -13,8 +13,8 @@ var jsonWrite = function(res, ret) {
   if(typeof ret === 'undefined') {
     res.send('err')
   } else {
-    //res.json(ret);
-    res.send('ok')
+    /*res.send('ok')*/
+    res.send(ret);
   }
 };
 // 注册接口

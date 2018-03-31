@@ -64,25 +64,32 @@
             password: password
           },{}).then((response) => {
             console.log(response);
+            console.log(response.data)
             if(response.data == -1){
               /* userApi接口传值-1，该用户不存在 */
               this.$message.error('对不起，用户名不存在');
             }else if(response.data == 0){
               /* userApi接口传值0，该密码错误 */
               this.$message.error('对不起，用户密码错误');
-            }else if(response.data == 'ok'){
+            }else{
               this.$message('登陆成功，3秒后自动进入登陆前页面');
+
+
+              /* 用户信息验证 */
+              let expireDays = 1000 * 60 * 60 * 24 * 15;
+              this.setCookie('session', response.data.session, expireDays);
+
+
               /*注册成功之后再跳回登录页*/
               this.clear();//清空文本
               setTimeout(() => {
                 this.$router.push({ path: '/appraisal' })
               }, 3000);
-            }else{
-              this.$message.error('对不起，登陆异常，请联系管理员解决');
             }
           })
         }
       },
+
       /* 清空注册文本框数据 */
       clear(){
         this.username = '',
@@ -90,6 +97,7 @@
         this.question = '',
         this.autoLogin = ''
       },
+
     }
   }
 </script>

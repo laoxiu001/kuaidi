@@ -74,7 +74,6 @@
         this.$http.post('/api/user/selectNews').then((response)=>{
           this.carousel = response.data;
           this.today_recomend = response.data;
-          console.log(response.data)
         });
       }
     }
