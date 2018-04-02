@@ -51,7 +51,7 @@
           <el-input v-model="tel" style="width: 320px"></el-input>
         </el-form-item>
 
-        <el-form-item label="地址">
+        <el-form-item v-model="address" label="地址">
         </el-form-item>
 
         <el-form-item label="">
@@ -80,7 +80,7 @@
           manner: '',
           name: '',
           tel: '',
-          location: '',
+          address: '',
           check: '',
       }
     },
