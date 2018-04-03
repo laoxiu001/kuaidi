@@ -31,8 +31,15 @@ news新闻列表
 	content帖子内容
 	src图片地址
 
-
-
+recycle快递回收表
+	id编号
+	resource包装材料
+	area包装面积
+	damage破损程度
+	manner取件方式
+	name姓名
+	tel手机
+	address地址
 
 
 

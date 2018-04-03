@@ -51,7 +51,8 @@
           <el-input v-model="tel" style="width: 320px"></el-input>
         </el-form-item>
 
-        <el-form-item v-model="address" label="地址">
+        <el-form-item label="手机">
+          <el-input v-model="address" style="width: 320px"></el-input>
         </el-form-item>
 
         <el-form-item label="">
@@ -61,7 +62,7 @@
         </el-form-item>
 
         <el-form-item>
-          <el-button type="primary">立即回收</el-button>
+          <el-button type="primary" @click="submit">立即回收</el-button>
           <el-button @click="resetForm">重置</el-button>
         </el-form-item>
 
@@ -92,9 +93,68 @@
         this.manner = '';
         this.name = '';
         this.tel = '';
-        this.location = '';
+        this.address = '';
         this.check = '';
-      }
+      },
+      submit(){
+        var resource = this.resource;
+        var area = this.area;
+        var damage = this.damage
+        var manner = this.manner;
+        var name = this.name;
+        var tel = this.tel;
+        var address = this.address;
+        var check = this.check;
+
+        if (resource==''){
+          this.$message.error('请选择包装材料');
+          return;
+        }else if(area==''){
+          this.$message.error('请选择包装面积');
+          return;
+        }else if(damage==''){
+          this.$message.error('请选择破损程度');
+          return;
+        }else if(manner==''){
+          this.$message.error('请选择取件方式');
+          return;
+        }else if(name==''){
+          this.$message.error('请输入您的姓名');
+          return;
+        }else if(tel==''){
+          this.$message.error('请输入您的手机号');
+          return;
+        }else if(address==''){
+          this.$message.error('请输入您的取件住址');
+          return;
+        }else if(check==''){
+          this.$message.error('请勾选“我已查看并接受”');
+          return;
+        }else {
+          /* 执行上传 */
+          this.$http.post('/api/user/recycle', {
+            resource: resource,
+            area: area,
+            damage: damage,
+            manner: manner,
+            name: name,
+            tel: tel,
+            address: address,
+          },{}).then((response) => {
+            console.log(response);
+            /* userApi接口传值-1，提交失败 */
+            if(response.data == -1){
+              this.$message.error('对不起，提交失败，请联系管理员解决');
+            }else if(response.status == '200'){
+              this.$message('恭喜您，提交信息成功，稍后将有工作人员联系您');
+              /*提交成功*/
+              this.resetForm();//清空文本
+            }else{
+              this.$message.error('对不起，注册异常，请联系管理员解决');
+            }
+          })
+        }
+      },
     }
   }
 </script>

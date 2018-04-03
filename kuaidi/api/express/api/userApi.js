@@ -43,6 +43,24 @@ router.post('/addUser', (req, res) => {
 
 });
 
+
+
+// 快递回收表单页面
+router.post('/recycle', (req, res) => {
+  var sql = $sql.user.addRecycle;
+  var params = req.body;
+  console.log(params);
+  conn.query(sql,[params.resource,params.area,params.damage,params.manner,params.name,params.tel,params.address], function(err, result) {
+    if(err) {
+      res.send('-1');
+      console.log(err)
+    }
+    if(result) {
+      jsonWrite(res, result)
+    }
+  })
+});
+
 //查找用户接口
 router.post('/selectUser', (req,res) => {
   var sql_name = $sql.user.select_name;
