@@ -3,7 +3,7 @@ user用户数据表
 	username用户名
 	password密码
 	level等级
-	group组别
+	group组别（表关联）
 		0：限制会员
 		1：新手上路
 		2：注册会员
@@ -11,12 +11,14 @@ user用户数据表
 		4：高级会员
 		5：金牌会员
 		6：论坛元老
+		7:管理员
 	title发表主题数
 	post发表帖子数
 	integral用户积分
+	email邮箱
 
 
-post帖子内容表
+post帖子主题表
 	id编号
 	title文章标题
 	user用户名
@@ -41,5 +43,12 @@ recycle快递回收表
 	tel手机
 	address地址
 
+reply帖子内容表
+	id编号
+	postID帖子编号
+	userID用户编号
+	content回帖内容
+	date发表日期
+	isFirst回复者，1为楼主；2为回帖者
 
 

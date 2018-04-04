@@ -14,10 +14,10 @@
       <el-button type="primary" style="background-color: red;border: none">发表主题</el-button>
     </div>
 
-    <div class="title">
-      <div class="views fl"><a>查看: <span>204</span> | 回复: <span>27</span></a></div>
+    <div class="title" v-for="item in post">
+      <div class="views fl"><a>查看: <span>{{item.review}}</span> | 回复: <span>{{item.reply}}</span></a></div>
       <div class="line fl"><img src="../assets/thread/line.png" alt="分割线"></div>
-      <div class="title_text fl">游泳潜水都不怕 这是一款真正的防水耳机 <a href="" class="clra">[复制链接]</a></div>
+      <div class="title_text fl">{{item.title}}<a href="" class="clra">[复制链接]</a></div>
       <div class="title_icon fr">
         <a href=""><img src="../assets/thread/print.png" alt=""></a>
         <a href=""><img src="../assets/thread/prev.png" alt=""></a>
@@ -128,6 +128,43 @@
 </template>
 
 <script>
+  export default {
+    data(){
+      return{
+        post: [
+          {
+            review: '204',
+            reply: '27',
+            title: '游泳潜水都不怕 这是一款真正的防水耳机',
+          }
+        ],
+        reply: [
+          {
+            username: 'admin',
+            title: '153',
+            post: '347',
+            integral: '341',
+            group: '7',
+            level: '17',
+            date: '2017-5-10 10:10:36',
+            isFirst: '1',
+            content: '测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！',
+          },
+          {
+            username: 'admin',
+            title: '153',
+            post: '347',
+            integral: '341',
+            group: '7',
+            level: '17',
+            date: '2017-5-10 10:10:36',
+            isFirst: '0',
+            content: '你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！',
+          },
+        ],
+      }
+    },
+  }
 </script>
 
 <style scope>
