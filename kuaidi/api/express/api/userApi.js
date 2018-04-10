@@ -87,11 +87,44 @@ router.post('/selectUser', (req,res) => {
   })
 });
 
-//展示帖子数据
+//首页展示帖子标题
 router.post('/selectPost', (req,res) => {
   var sql_post = $sql.user.select_post;
   var params = req.body;
   conn.query(sql_post,function(err, result) {
+    if(err) {
+      console.log(err)
+    }
+    if(result[0]===undefined) {
+      res.send('-1')    //查询不到帖子数据，data返回-1
+    }else {
+      res.send(result);
+    }
+  })
+});
+
+
+//详情页 根据帖子ID 展示帖子标题
+router.post('/selectPostById', (req,res) => {
+  var sql_post = $sql.user.select_postById;
+  var params = req.body;
+  conn.query(sql_post,params.postId, function(err, result) {
+    if(err) {
+      console.log(err)
+    }
+    if(result[0]===undefined) {
+      res.send('-1')    //查询不到帖子数据，data返回-1
+    }else {
+      res.send(result);
+    }
+  })
+});
+
+//详情页 根据帖子ID 展示回帖数据
+router.post('/selectReply', (req,res) => {
+  var sql_post = $sql.user.select_replyById;
+  var params = req.body;
+  conn.query(sql_post,params.postId, function(err, result) {
     if(err) {
       console.log(err)
     }

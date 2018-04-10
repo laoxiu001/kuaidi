@@ -25,15 +25,15 @@
       </div>
     </div>
 
-    <div class="post_first">
+    <div class="post" v-for="item in reply">
       <div class="user fl">
-        <div class="username"><a>admin</a></div>
+        <div class="username"><a>{{item.username}}</a></div>
         <div class="photo"><img src="../assets/thread/photo.gif" alt="photo"></div>
         <div class="userinf">
-          <div class="userinf_title fl"><p><a href="" class="clra">153</a></p>主题</div>
-          <div class="userinf_post fl"><p><a href="" class="clra">347</a></p>帖子</div>
+          <div class="userinf_title fl"><p><a href="" class="clra">{{item.title}}</a></p>主题</div>
+          <div class="userinf_post fl"><p><a href="" class="clra">{{item.post}}</a></p>帖子</div>
           <!-- 积分 -->
-          <div class="userinf_integral fl"><p><a href="" class="clra">341</a></p>积分</div>
+          <div class="userinf_integral fl"><p><a href="" class="clra">{{item.integral}}</a></p>积分</div>
         </div>
         <div class="admin"><a href="" class="clra">管理员</a></div>
         <div class="level">
@@ -49,65 +49,21 @@
 
       <div class="content fl">
         <div class="date">
-          发表于 <span style="margin-right: 50px">2017-5-10 10:10:36</span>
+          发表于 <span style="margin-right: 50px">{{item.date}}</span>
           | <a href="">只看该作者</a>
           | <a href="">只看大图</a>
           | <a href="">倒叙浏览</a>
           | <a href="">阅读模式</a>
         </div>
         <div class="text">
-          <a>
-            测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！
-          </a>
+          <a>{{item.content}}</a>
         </div>
         <div class="content_button">
-          <el-button type="primary" icon="el-icon-star-off" size="mini">收藏</el-button>
-          <el-button type="primary" icon="el-icon-share" size="mini">转发</el-button>
-          <el-button type="primary" icon="el-icon-upload" size="mini">分享</el-button>
-          <el-button type="primary" icon="el-icon-document" size="mini">淘帖</el-button>
-          <el-button type="primary" icon="el-icon-circle-check-outline" size="mini">支持</el-button>
-          <el-button type="primary" icon="el-icon-circle-close-outline" size="mini">反对</el-button>
-        </div>
-      </div>
-    </div>
-
-    <div class="post_next">
-      <div class="user fl">
-        <div class="username"><a>admin</a></div>
-        <div class="photo"><img src="../assets/thread/photo.gif" alt="photo"></div>
-        <div class="userinf">
-          <div class="userinf_title fl"><p><a href="" class="clra">153</a></p>主题</div>
-          <div class="userinf_post fl"><p><a href="" class="clra">347</a></p>帖子</div>
-          <!-- 积分 -->
-          <div class="userinf_integral fl"><p><a href="" class="clra">341</a></p>积分</div>
-        </div>
-        <div class="admin"><a href="" class="clra">管理员</a></div>
-        <div class="level">
-          <img src="../assets/thread/sun.gif" alt="太阳">
-          <img src="../assets/thread/sun.gif" alt="太阳">
-          <img src="../assets/thread/star.gif" alt="星星">
-        </div>
-        <div class="user_button">
-          <el-button type="primary" icon="el-icon-circle-plus-outline" size="mini" style="width: 80px">收听Ta</el-button>
-          <el-button type="primary" icon="el-icon-message" size="mini" style="width: 80px">发消息</el-button>
-        </div>
-      </div>
-
-      <div class="content fl">
-        <div class="date">
-          发表于 <span style="margin-right: 50px">2017-5-10 10:10:36</span>
-          | <a href="">只看该作者</a>
-          | <a href="">只看大图</a>
-          | <a href="">倒叙浏览</a>
-          | <a href="">阅读模式</a>
-        </div>
-        <div class="text">
-          <a>
-            测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！
-          </a>
-        </div>
-        <div class="content_button">
-          <el-button type="primary" icon="el-icon-document" size="mini">回复</el-button>
+          <el-button type="primary" icon="el-icon-star-off" size="mini" v-if="item.isFirst == 1">收藏</el-button>
+          <el-button type="primary" icon="el-icon-share" size="mini" v-if="item.isFirst == 1">转发</el-button>
+          <el-button type="primary" icon="el-icon-document" size="mini" v-if="item.isFirst == 0">回复</el-button>
+          <el-button type="primary" icon="el-icon-upload" size="mini" v-if="item.isFirst == 1">分享</el-button>
+          <el-button type="primary" icon="el-icon-document" size="mini" v-if="item.isFirst == 1">淘帖</el-button>
           <el-button type="primary" icon="el-icon-circle-check-outline" size="mini">支持</el-button>
           <el-button type="primary" icon="el-icon-circle-close-outline" size="mini">反对</el-button>
         </div>
@@ -131,39 +87,32 @@
   export default {
     data(){
       return{
-        post: [
-          {
-            review: '204',
-            reply: '27',
-            title: '游泳潜水都不怕 这是一款真正的防水耳机',
-          }
-        ],
-        reply: [
-          {
-            username: 'admin',
-            title: '153',
-            post: '347',
-            integral: '341',
-            group: '7',
-            level: '17',
-            date: '2017-5-10 10:10:36',
-            isFirst: '1',
-            content: '测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！测试评论！',
-          },
-          {
-            username: 'admin',
-            title: '153',
-            post: '347',
-            integral: '341',
-            group: '7',
-            level: '17',
-            date: '2017-5-10 10:10:36',
-            isFirst: '0',
-            content: '你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！你好！',
-          },
-        ],
+        post: [],
+        reply: [],
       }
     },
+    mounted () {
+      this.list();
+    },
+    methods: {
+      list(){
+        /* 获取帖子标题信息 */
+        var postId = this.$route.query.postId;/* 获取URL传参 */
+        this.$http.post('/api/user/selectPostByID',{
+          postId: postId,
+        },{}).then((response)=>{
+          this.post = response.data;
+        });
+
+        /* 获取回帖数据 */
+        this.$http.post('/api/user/selectReply',{
+          postId: postId,
+        },{}).then((response)=>{
+          this.reply = response.data;
+          console.log('213123' + this.reply);
+        });
+      }
+    }
   }
 </script>
 
@@ -215,16 +164,9 @@
   .title_icon{
     margin-top: 5px;
   }
-  .post_first{
+  .post{
     width: 960px;
     overflow:hidden;
-    padding: 20px 20px;
-    margin-top: 10px;
-    background-color: white;
-  }
-  .post_next{
-    width: 960px;
-    height: 400px;
     padding: 20px 20px;
     margin-top: 10px;
     background-color: white;
