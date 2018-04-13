@@ -43,15 +43,15 @@
           </el-radio-group>
         </el-form-item>
 
-        <el-form-item label="姓名">
+        <el-form-item label="姓名：">
           <el-input v-model="name" style="width: 320px"></el-input>
         </el-form-item>
 
-        <el-form-item label="手机">
+        <el-form-item label="手机：">
           <el-input v-model="tel" style="width: 320px"></el-input>
         </el-form-item>
 
-        <el-form-item label="手机">
+        <el-form-item label="地址：">
           <el-input v-model="address" style="width: 320px"></el-input>
         </el-form-item>
 

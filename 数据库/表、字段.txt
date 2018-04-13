@@ -23,8 +23,11 @@ post帖子主题表
 	title文章标题
 	user用户名
 	content帖子内容
-	date发表时日期
 	src图片地址
+	####review浏览数####
+	####reply回帖数####
+	date发表时日期
+	
 	
 
 news新闻列表

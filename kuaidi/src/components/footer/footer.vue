@@ -10,9 +10,9 @@
           <!-- 友情链接文本内容 -->
           <el-row>
             <el-col :span="4"><div class="content_box">
-              <div class="content_box_text"><a class="fl">一加传媒·MCM</a></div>
-              <div class="content_box_url"><a class="fl" href="www.baidu.com">一加传媒·MCM</a></div>
-              <div class="content_box_url"><a class="fl" href="www.baidu.com">一加影像</a></div>
+              <div class="content_box_text"><a class="fl">雷格传媒·MCM</a></div>
+              <div class="content_box_url"><a class="fl" href="www.baidu.com">雷格传媒·MCM</a></div>
+              <div class="content_box_url"><a class="fl" href="www.baidu.com">雷格影像</a></div>
             </div></el-col>
             <el-col :span="4"><div class="content_box">
               <div class="content_box_text"><a class="fl">关于我们·About US</a></div>
@@ -23,17 +23,17 @@
               <div class="content_box_url"><a class="fl" href="www.baidu.com">关于我们</a></div>
             </div></el-col>
             <el-col :span="4"><div class="content_box">
-              <div class="content_box_text"><a class="fl">一加论坛·Forum</a></div>
+              <div class="content_box_text"><a class="fl">雷格论坛·Forum</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">国内资讯</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">国际资讯</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">社区福利</a></div>
             </div></el-col>
             <el-col :span="4"><div class="content_box">
-              <div class="content_box_text"><a class="fl">一加赛事·Race</a></div>
+              <div class="content_box_text"><a class="fl">雷格赛事·Race</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">军事新闻</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">社区聚焦</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">赛事专栏</a></div>
-              <div class="content_box_text"><a class="fl">一加影像·MCF</a></div>
+              <div class="content_box_text"><a class="fl">雷格影像·MCF</a></div>
               <div class="content_box_url"><a class="fl" href="www.baidu.com">优酷空间</a></div>
             </div></el-col>
             <el-col :span="4"><div class="content_box">
@@ -45,7 +45,7 @@
               <div class="content_box_url"><a class="fl" href="www.baidu.com">官方微博</a></div>
             </div></el-col>
             <el-col :span="4"><div class="content_box">
-              <div class="content_box_text"><a class="fl">一加项目·Projects</a></div>
+              <div class="content_box_text"><a class="fl">雷格项目·Projects</a></div>
               <div class="content_box_url"><a class="fl"><img src="../../assets/weixin.jpg" alt="weixin" style="width: 145px;"></a></div>
               <div class="content_box_text"><a class="fl">扫码关注公众号抢福利</a></div>
             </div></el-col>
