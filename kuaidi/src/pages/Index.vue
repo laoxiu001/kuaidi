@@ -96,7 +96,7 @@
 
   .hotnews {
     width: 300px;
-    height: 375px;
+    height: 400px;
   }
 
   .today_recomend {
@@ -118,7 +118,7 @@
     margin-top: 10px;
     margin-left: 15px;
     width: 270px;
-    height: 80px;
+    height: 90px;
   }
 
   .hotnews_new p {
@@ -135,7 +135,7 @@
   }
 
   .content_bottom {
-    margin: 0 auto;
+    margin: 50px auto;
     width: 1000px;
   }
 

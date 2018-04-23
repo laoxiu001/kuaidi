@@ -55,7 +55,7 @@
           | <a href="">倒叙浏览</a>
           | <a href="">阅读模式</a>
         </div>
-        <div class="text">
+        <div class="text" v-html="item.content">
           <a>{{item.content}}</a>
         </div>
         <div class="content_button">
