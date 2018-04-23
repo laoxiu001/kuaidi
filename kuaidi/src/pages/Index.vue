@@ -6,8 +6,8 @@
           <span class="demonstration"><!--今日要闻--></span>
           <el-carousel height="320px" indicator-position="outside">
             <el-carousel-item v-for="item in carousel" :key="carousel.title">
-              <h3>{{ item.title }}</h3>
-              <img :src="item.src" alt="" style="width: 600px;margin-top: 20px">
+              <h3><a href="#" class="clra">{{ item.title }}</a></h3>
+              <a href="#"><img :src="item.src" alt="" style="width: 600px;margin-top: 20px"></a>
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -92,6 +92,9 @@
     margin-top: 20px;
     height: 270px;
     width: 685px;
+  }
+  .picture h3 a:hover{
+    color: red;
   }
 
   .hotnews {
