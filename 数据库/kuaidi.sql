@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 100119
 File Encoding         : 65001
 
-Date: 2018-04-23 08:57:58
+Date: 2018-05-14 15:33:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,8 +32,8 @@ CREATE TABLE `news` (
 -- ----------------------------
 INSERT INTO `news` VALUES ('1', '马云也盯上废品行业了——回收快递纸箱直接进造纸厂', '2014年以来，我国快递业务量规模连续3年稳居世界首位，全球占比超过4成。', '../../static/index/img1.jpg');
 INSERT INTO `news` VALUES ('2', '绿色物流再祭新招！苏宁共享快递盒回收站亮相13城', '　家住杭州的吴先生，在苏宁易购(12.66 -3.21%,诊股)年货节抢购了一部手机', '../../static/index/img2.png');
-INSERT INTO `news` VALUES ('3', '快递垃圾困境：这些包装废弃物真的无解吗？', '在阿里巴巴、京东、苏宁等公司的集体助攻下，从2012年到2016年', '../../static/index/img3.png');
-INSERT INTO `news` VALUES ('4', '武汉一高校学生回收快递盒“变废为宝”', '武汉华夏理工学院学生想出一个妙招：把快递盒回收改造成礼品盒、收纳盒', '../../static/index/img1.jpg');
+INSERT INTO `news` VALUES ('3', '快递垃圾困境：这些包装废弃物真的无解吗？', '在阿里巴巴、京东、苏宁等公司的集体助攻下，从2012年到2016年', '../../static/index/img3.jpg');
+INSERT INTO `news` VALUES ('4', '武汉一高校学生回收快递盒“变废为宝”', '武汉华夏理工学院学生想出一个妙招：把快递盒回收改造成礼品盒、收纳盒', '../../static/index/img4.jpg');
 
 -- ----------------------------
 -- Table structure for post
@@ -73,12 +73,13 @@ CREATE TABLE `recycle` (
   `tel` varchar(255) NOT NULL COMMENT '手机',
   `address` varchar(255) NOT NULL COMMENT '地址',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of recycle
 -- ----------------------------
 INSERT INTO `recycle` VALUES ('3', '包装袋', '10~100cm²', '较新包装，外壳轻微破损', '自行联系快递', '1', '1', '1');
+INSERT INTO `recycle` VALUES ('4', '瓦楞纸', '10~100cm²', '全新包装，外壳无破损', '客服联系上门取件', '123', '321', '3123123123123');
 
 -- ----------------------------
 -- Table structure for reply

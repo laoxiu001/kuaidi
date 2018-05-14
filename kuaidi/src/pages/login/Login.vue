@@ -76,8 +76,8 @@
 
 
               /* 用户信息验证 */
-              let expireDays = 1000 * 60 * 60 * 24 * 15;
-              this.setCookie('session', response.data.session, expireDays);
+              /*let expireDays = 1000 * 60 * 60 * 24 * 15;
+              this.setCookie('session', response.data.session, expireDays);*/
 
 
               /*注册成功之后再跳回登录页*/
