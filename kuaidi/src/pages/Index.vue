@@ -36,7 +36,7 @@
       </div>
       <div class="content_bottom_left fl" v-for="item in post">
         <div class="posts">
-          <div class="posts_img fl"><a href="/thread" class="clra"><img :src="item.src" alt="post_img"></a></div>
+          <div class="posts_img fl"><a :href="'thread?postId=' + item.id " class="clra"><img :src="item.src" alt="post_img"></a></div>
           <div class="posts_title"><a :href="'thread?postId=' + item.id " class="clra">{{ item.title }}</a>
           </div>
           <div class="posts_user">
