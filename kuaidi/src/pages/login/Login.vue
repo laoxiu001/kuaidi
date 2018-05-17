@@ -4,33 +4,44 @@
       <div class="box">
         <div class="box_top"><h3>登录到 Comsenz Inc. 论坛</h3></div>
         <div class="box_bottom">
-          <div class="form">
-            <el-form label-width="80px" label-position="left" class="fl">
-              <el-form-item label="用户名">
-                <el-input v-model="username"></el-input>
-              </el-form-item>
-              <el-form-item label="密码">
-                <el-input type="password" v-model="password"></el-input>
-              </el-form-item>
-              <el-form-item label="安全问题">
-                <el-select v-model="question" placeholder="安全问题(未设置请忽略)">
-                  <el-option label="安全问题(未设置请忽略)" value="none"></el-option>
-                  <el-option label="母亲的名字" value="mother"></el-option>
-                  <el-option label="爷爷的名字" value="grandfather"></el-option>
-                  <el-option label="出生的城市" value="city"></el-option>
-                  <el-option label="一位老师的名字" value="teacher"></el-option>
-                </el-select>
-              </el-form-item>
-              <el-form-item>
-                <el-checkbox-group v-model="autoLogin">
-                  <el-checkbox label="下次自动登录" name="type" class="fl"></el-checkbox>
-                </el-checkbox-group>
-              </el-form-item>
-              <el-form-item size="large">
-                <el-button type="danger" class="fl btn_login" @click="login">登陆</el-button>
-              </el-form-item>
-            </el-form>
-          </div>
+          <el-tabs value="first" type="card" v-model="activeName">
+            <el-tab-pane label="账号密码登陆" name="first">
+              <div class="form">
+                <el-form label-width="80px" label-position="left" class="fl">
+                  <el-form-item label="用户名">
+                    <el-input v-model="username"></el-input>
+                  </el-form-item>
+                  <el-form-item label="密码">
+                    <el-input type="password" v-model="password"></el-input>
+                  </el-form-item>
+                  <el-form-item label="安全问题">
+                    <el-select v-model="question" placeholder="安全问题(未设置请忽略)">
+                      <el-option label="安全问题(未设置请忽略)" value="none"></el-option>
+                      <el-option label="母亲的名字" value="mother"></el-option>
+                      <el-option label="爷爷的名字" value="grandfather"></el-option>
+                      <el-option label="出生的城市" value="city"></el-option>
+                      <el-option label="一位老师的名字" value="teacher"></el-option>
+                    </el-select>
+                  </el-form-item>
+                  <el-form-item>
+                    <el-checkbox-group v-model="autoLogin">
+                      <el-checkbox label="下次自动登录" name="type" class="fl"></el-checkbox>
+                    </el-checkbox-group>
+                  </el-form-item>
+                  <a style="cursor: pointer"><i class="fa fa-qq fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a style="cursor: pointer"><i class="fa fa-weibo fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a style="cursor: pointer"><i class="fa fa-weixin fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a style="cursor: pointer"><i class="fa fa-github fa-2x"></i></a>
+                  <el-form-item size="large">
+                    <el-button type="danger" class="fl btn_login" @click="login">登陆</el-button>
+                  </el-form-item>
+                </el-form>
+              </div>
+            </el-tab-pane>
+            <el-tab-pane label="二维码登录" name="second">
+              <img src="../../assets/code.png" alt="">
+            </el-tab-pane>
+          </el-tabs>
         </div>
       </div>
     </div>
@@ -41,6 +52,7 @@
   export default {
     data(){
       return {
+        activeName: 'first',
         username: '',
         password: '',
         question: '',
@@ -129,7 +141,7 @@
   .box_bottom{
     padding-top: 50px;
     width: 100%;
-    height: 330px;
+    height: 420px;
     box-shadow: rgba(0,0,0,0.0784314) 0px 1px 4px;
     background: linear-gradient(rgb(255,255,255),rgb(245,245,245));
     border-bottom: 1px solid rgb(220,220,220) !important;
@@ -139,6 +151,7 @@
     width: 350px;
   }
   .btn_login{
+    margin-top: 15px;
     width: 220px;
     height: 45px;
     font-size: 20px;

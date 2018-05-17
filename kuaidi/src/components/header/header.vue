@@ -48,6 +48,7 @@
         <el-col :span="4"><div class="search">
           <el-input
             size="mini"
+            suffix-icon="el-icon-picture-outline"
             placeholder="请输入内容"
             prefix-icon="el-icon-search">
           </el-input>
